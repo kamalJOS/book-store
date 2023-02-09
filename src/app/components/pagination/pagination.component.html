@@ -1,0 +1,4 @@
+<div class="pagination">
+    <button [disabled]="booksService.getPage()===1" (click)="updatePage(false)">Previous</button>
+    <button [disabled]="booksService.getPage()===booksService.pages" (click)="updatePage(true)">Next</button>
+</div>

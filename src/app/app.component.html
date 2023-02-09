@@ -1,0 +1,11 @@
+<div class="page">
+    <!-- trending can be given from here -->
+    <app-trending-books></app-trending-books>
+    <div class="page-right">
+        <router-outlet></router-outlet>
+        <!-- books should be given from here -->
+        <app-loader *ngIf="bookService.loadingStatus===undefined"></app-loader>
+        <app-book-details *ngIf="bookService.loadingStatus===true" [Books]="bookService.books"></app-book-details> 
+        <app-pagination *ngIf="bookService.loadingStatus===true"></app-pagination> 
+    </div>
+</div>
